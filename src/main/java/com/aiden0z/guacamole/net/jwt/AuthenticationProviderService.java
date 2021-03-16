@@ -24,6 +24,7 @@ public class AuthenticationProviderService {
         @Override
         public String getName() {
             return "secret-key";
+
         }
     };
 

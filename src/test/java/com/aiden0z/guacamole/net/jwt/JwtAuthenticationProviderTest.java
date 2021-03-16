@@ -28,7 +28,7 @@ import org.junit.Test;
 
 public class JwtAuthenticationProviderTest extends TestCase {
 
-    private static final String secretKey = "secret";
+    private static final String secretKey = "ssecret-key-asdfasdfasdfsecret-key-asdfasdfasdfsecret-key-asdfasdfasdfsecret-key-asdfasdfasdfsecret-key-asdfasdfasdfecret-key-asdfasdfasdf";
 
     private Environment environment;
 
@@ -87,8 +87,8 @@ public class JwtAuthenticationProviderTest extends TestCase {
 
         HttpServletRequest request = getHttpServletRequest(token);
 
-        Credentials credentials = new Credentials();
-        credentials.setRequest(request);
+        Credentials credentials = new Credentials("test", "test", request);
+        // credentials.setRequest(request);
 
         JwtAuthenticationProvider authProvider = new JwtAuthenticationProvider(getInjector(), environment);
 
@@ -114,8 +114,9 @@ public class JwtAuthenticationProviderTest extends TestCase {
 
         HttpServletRequest request = getHttpServletRequest(token);
 
-        Credentials credentials = new Credentials();
-        credentials.setRequest(request);
+        /* Credentials credentials = new Credentials();
+        credentials.setRequest(request); */
+        Credentials credentials = new Credentials("test", "test", request);
 
         JwtAuthenticationProvider authProvider = new JwtAuthenticationProvider(getInjector(), environment);
 
@@ -136,8 +137,9 @@ public class JwtAuthenticationProviderTest extends TestCase {
 
         HttpServletRequest request = getHttpServletRequest(invalid_token);
 
-        Credentials credentials = new Credentials();
-        credentials.setRequest(request);
+        /* Credentials credentials = new Credentials();
+        credentials.setRequest(request); */
+        Credentials credentials = new Credentials("test", "test", request);
 
         JwtAuthenticationProvider authProvider = new JwtAuthenticationProvider(getInjector(), environment);
 
@@ -154,8 +156,9 @@ public class JwtAuthenticationProviderTest extends TestCase {
 
         HttpServletRequest request = getHttpServletRequest(token);
 
-        Credentials credentials = new Credentials();
-        credentials.setRequest(request);
+        /* Credentials credentials = new Credentials();
+        credentials.setRequest(request); */
+        Credentials credentials = new Credentials("test", "test", request);
 
         JwtAuthenticationProvider authProvider = new JwtAuthenticationProvider(getInjector(), environment);
 
